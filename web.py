@@ -10,7 +10,7 @@ def add_todo():
     functions.write_file(todos)
 
 
-st.title("My TO-DO App")
+st.title("Your TO-DO App")
 st.subheader("Manage your TO-DOs easily!")
 
 checkboxes = dict()
@@ -22,8 +22,6 @@ for index, todo in enumerate(todos):
         del st.session_state[todo]
         st.experimental_rerun()
 
-st.text_input("", placeholder="Enter a to-do", key="new_todo")
+st.text_input("", placeholder="Enter a to-do and click 'Add'", key="new_todo")
 
 st.button("Add", on_click=add_todo)
-
-st.session_state
